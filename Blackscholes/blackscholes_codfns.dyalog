@@ -19,7 +19,7 @@
     b×a  
   }
   
-  bs∆codfns←{S←0⌷⍵ ⋄ X←1⌷⍵ ⋄ T←2⌷⍵
+  bs∆codfns←{S←0⌷⍺ ⋄ X←1⌷⍺ ⋄ T←⍵
     expRT←-r
     expRT←*expRT×T
     a←v*2

@@ -1,4 +1,4 @@
-:Namespace Blackscholes
+﻿:Namespace Blackscholes
 
     ⎕IO←0
 
@@ -56,7 +56,7 @@
       CNDP2←{
           K←÷1+0.2316419×L←|⍵
           R←(÷(○2)*0.5)×(*(L×L)÷¯2)×{coeff+.×⍵*1+⍳5}¨K
-          (1 ¯1)[B]×(0 ¯1)[B←⍵≥0]+R
+          (1 ¯1)[B]×((0 ¯1)[B←⍵≥0])+R
       }
 
     r←riskfree
@@ -69,5 +69,34 @@
           R←(S×CD1←CNDP2 D1)-X×expRT×CD2←CNDP2 D2
           R,[0.5]((X×expRT×1-CD2)-S×1-CD1)
       }
+      
+⍝ This is a version to test the Co-dfns compiler
+
+    ∇ Z←BS∆CODFNS∆INIT;init_codfns
+      #.CoDfns.FFI∆INIT
+      'bs_codfns'⎕NA'I4 ./blackscholes.so|bs_codfns P P P'
+      'init_codfns'⎕NA'I4 ./blackscholes.so|Init P P P'
+      _←init_codfns 0 0 0
+      Z←0 0⍴⍬
+    ∇
+    
+      BS∆CODFNS←{_←BS∆CODFNS∆INIT
+          fmad←#.CoDfns.ffi_make_array_double
+          fmai←#.CoDfns.ffi_make_array_int
+          S X T←⊂[0]⍵ ⋄ lft←↑S X ⋄ rgt←T
+          0≠⊃e rgt←fmad 1(≢⍴rgt)(≢,rgt)(⍴rgt)(,rgt):('BAD ⍵: ',⍕e)⎕SIGNAL e
+          0≠⊃e lft←fmai 1(≢⍴lft)(≢,lft)(⍴lft)(,lft):('BAD ⍺: ',⍕e)⎕SIGNAL e
+          0≠⊃e out←fmad 1 0 0 ⍬ ⍬:('BAD OUT: ',⍕e)⎕SIGNAL e
+          0≠bs_codfns out lft rgt:('BAD CALL: ',⍕e)⎕SIGNAL e
+          z←⍉(2,⍴S)⍴#.CoDfns.ConvertArray out
+          _←#.CoDfns.array_free rgt
+          _←#.CoDfns.array_free lft
+          _←#.CoDfns.array_free out
+          _←#.CoDfns.free rgt
+          _←#.CoDfns.free lft
+          _←#.CoDfns.free out
+          z
+      }
 
 :EndNamespace
+
