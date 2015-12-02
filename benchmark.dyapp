@@ -1,0 +1,6 @@
+Target #
+Load ..\Source\codfns
+Load config
+Load timing
+Load Sum_Three_Five\sum35
+Run sum35.Benchmark
