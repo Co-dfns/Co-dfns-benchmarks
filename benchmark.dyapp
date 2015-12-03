@@ -6,3 +6,5 @@ Load Sum_Three_Five\sum35
 Run sum35.Benchmark
 Load Sobel_Pi\sobelpi
 Run sobelpi.Benchmark
+Load Blackscholes\blackscholes
+Run blackscholes.Benchmark
