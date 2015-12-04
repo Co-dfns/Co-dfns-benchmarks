@@ -8,3 +8,5 @@ Load Sobel_Pi\sobelpi
 Run sobelpi.Benchmark
 Load Blackscholes\blackscholes
 Run blackscholes.Benchmark
+Load GenoKey\genokey
+Run genokey.Benchmark
