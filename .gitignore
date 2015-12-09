@@ -1,3 +1,5 @@
 Build/*.so
 Build/*.c
 Build/*.log
+dwa/
+aplcore
