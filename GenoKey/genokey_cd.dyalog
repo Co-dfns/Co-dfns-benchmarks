@@ -1,7 +1,11 @@
 :Namespace genokey_cd
 
 I←{⍬≡⍴⍵:⍵ ⋄ ⊃((⎕DR ⍵)323)⎕DR ⍵}
-S←':Namespace' 'Do←{⍺∧0≠⍵}' ':EndNamespace'
+S←⊂':Namespace' 
+S,←⊂'Do←{R←0⌷⍵ ⋄ C←1⌷⍵ ⋄ S←2↑2↓⍵ ⋄ VAL←(4+R+C)↓⍵'
+S,←⊂'I←R↑4↓⍵ ⋄ J←C↑(4+R)↓⍵'
+S,←⊂'⍺∧0≠I J⌷S⍴VAL}'
+S,←⊂':EndNamespace'
 
 CD←'genokey'#.codfns.Fix S
 so←#.codfns.BSO 'genokey'
@@ -10,9 +14,6 @@ so←#.codfns.BSO 'genokey'
 ⍝[c]To convert the Co-dfns version into something with good 
 ⍝[c]performance, we have the following set of steps that we need to take,
 ⍝[c]given in the order of their impact priority:
-⍝[c]
-⍝[c]1. 	Enable support for matrix indexing to merge the G0 G1⌷ portion 
-⍝[c]	of the code into the ⍺∧0≠⍵ part. 
 ⍝[c]
 ⍝[c]3. 	Add support for bitvectors to enable better handling of the input 
 ⍝[c]	data. 
@@ -31,7 +32,7 @@ rp_joinx←{
 		G0	←⍺⍳⍨D0←∪⍺	
 		G1	←⍵⍳⍨D1←∪⍵	
 		J0	←D0∘.∩D1	⍝ The unique elements are colligated by intersection
-		DAT	←'genokey'#.codfns.MKA I G0 G1⌷≢¨J0
+		DAT	←'genokey'#.codfns.MKA I (≢G0),(≢G1),(⍴J0),G0,G1,,≢¨J0
 		_	←Doii BM BM DAT 0
 		_	←'genokey'#.codfns.FREA DAT
 			J0 G0 G1
