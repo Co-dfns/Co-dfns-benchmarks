@@ -9,7 +9,7 @@ S,←⊂':EndNamespace'
 
 CD←'genokey'#.codfns.Fix S
 so←#.codfns.BSO 'genokey'
-'Doii'⎕NA so,'|fn_1_1ii P P P P'
+'Doii'⎕NA so,'|fn_1_1ib P P P P'
 
 ⍝[c]To convert the Co-dfns version into something with good 
 ⍝[c]performance, we have the following set of steps that we need to take,
@@ -27,7 +27,7 @@ rp_joinx←{
 	V	←V0,V1	⍝ both sets of variables
 	(⍳≢V)≡V⍳V:	(↓[0]↑,(↓[0]↑A0)∘.,↓[0]↑A1)[I](V[I←⍋V])	⍝ if no common variables
 	AL AR	←((V0∊V1)/A0)((V1∊V0)/A1)
-	BM	←'genokey'#.codfns.MKA I 1
+	BM	←'genokey'#.codfns.MKA (≢⊃AL)(≢⊃AR)⍴1
 	colligate←{	⍝ colligate common variables two at a time
 		G0	←⍺⍳⍨D0←∪⍺	
 		G1	←⍵⍳⍨D1←∪⍵	
@@ -37,8 +37,8 @@ rp_joinx←{
 		_	←'genokey'#.codfns.FREA DAT
 			J0 G0 G1
 	}
-	R	←((V0∊V1)/A0)colligate¨(V1∊V0)/A1
-	BM	←{⊃((⎕DR ⍵)11)⎕DR ⍵}'genokey'#.codfns.EXA BM 1
+	R	←AL colligate¨AR
+	BM	←{⊃((⎕DR ⍵)11)⎕DR ⍵}'genokey'#.codfns.EXA BM 3
 	I0 I1	←↓(⍴BM)⊤(,BM)/⍳×/⍴BM
 	⍬≡I0:	⍬	⍝ Exit if contradiction
 	CA	←{(0⊃⍵)[((1⊃⍵)[I0]),¨(2⊃⍵)[I1]]}¨R	
