@@ -9,16 +9,9 @@ S,←⊂':EndNamespace'
 
 CD←'genokey'#.codfns.Fix S
 so←#.codfns.BSO 'genokey'
-'Doii'⎕NA so,'|fn_1_1ib P P P P'
-
-⍝[c]To convert the Co-dfns version into something with good 
-⍝[c]performance, we have the following set of steps that we need to take,
-⍝[c]given in the order of their impact priority:
-⍝[c]
-⍝[c]3. 	Add support for bitvectors to enable better handling of the input 
-⍝[c]	data. 
 
 rp_joinx←{
+	_←'Doib'⎕NA so,'|Doib P P P'
 	⍝ Join relations ⍺ and ⍵ into a single relation
 	⍝ 1994-03-17 / GLM
 	⍝ 1999-06-17 / GLM
@@ -33,7 +26,7 @@ rp_joinx←{
 		G1	←⍵⍳⍨D1←∪⍵	
 		J0	←D0∘.∩D1	⍝ The unique elements are colligated by intersection
 		DAT	←'genokey'#.codfns.MKA I (≢G0),(≢G1),(⍴J0),G0,G1,,≢¨J0
-		_	←Doii BM BM DAT 0
+		_	←Doib BM BM DAT
 		_	←'genokey'#.codfns.FREA DAT
 			J0 G0 G1
 	}
