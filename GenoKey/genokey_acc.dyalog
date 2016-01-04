@@ -15,7 +15,6 @@ rp_joinx←{
 	BM	←⊂1
 	L	←((V0∊V1)/A0)
 	R	←(V1∊V0)/A1
-	Lz	←8×⌈8÷⍨≢⊃L
 	S	←(⍴⊃L),(⍴⊃R)
 	BM	←mk⊢ST←×/S
 	colligate←{	⍝ colligate common variables two at a time
@@ -23,7 +22,7 @@ rp_joinx←{
 		G1	←⍵⍳⍨D1←∪⍵	
 		J0	←D0∘.∩D1	⍝ The unique elements are colligated by intersection
 		TJ0	←,≢¨J0
-		BM	←gk BM (Lz↑G0) G1 TJ0 (≢G0) (≢G1) (≢J0) (⊃⌽⍴J0)
+		BM	←gk BM G0 G1 TJ0 (≢G0) (≢G1) (≢J0) (⊃⌽⍴J0)
 			J0 G0 G1
 	}
 	R	←L colligate¨R
