@@ -1,6 +1,6 @@
 :Namespace config
 
-#.codfns.COMPILER←'icc'
+#.codfns.COMPILER←'pgcc'
 #.codfns.TEST∆COMPILERS←'gcc' 'icc' 'pgcc'
 
 :EndNamespace
