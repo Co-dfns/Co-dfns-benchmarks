@@ -22,7 +22,7 @@ Call←{'#.blackscholes.{⊃',⍺,'.Run/Conv ⍵} ',⍵}
 Run←{⎕←#.timing.cmpx ('CD' Call ⍵)('DY' Call ⍵)⊣⎕←''}
 
 ∇Benchmark
-Run∘⍕¨2*10+2×⍳9
+Run∘⍕¨2*10+2×⍳8
 ∇
 
 :EndNamespace
