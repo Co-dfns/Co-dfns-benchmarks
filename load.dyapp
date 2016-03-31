@@ -1,4 +1,4 @@
 Target #
-Load ..\Source\codfns
+Load ..\src\codfns
 Load config
 Load timing
