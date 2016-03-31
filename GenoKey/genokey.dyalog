@@ -8,7 +8,7 @@
 
 RPCD←#.genokey_cd.rp_joinx
 RPDY←#.genokey_dy.rp_joinx
-RPAC←#.genokey_acc.rp_joinx
+⍝RPAC←#.genokey_acc.rp_joinx
 
 Call←{'#.genokey.{⊃',⍺,'/⍵}',⍵}
 

@@ -1,8 +1,8 @@
 :Namespace genokey_acc
 
-'mk'⎕NA'P ./Build/gk.so|mk I'
-'fk'⎕NA'./Build/gk.so|fk >I1[] P I'
-'gk'⎕NA'P ./Build/gk.so|gk P <I1[] <I1[] <I1[] I I I I'
+'mk'⎕NA'P ./build/gk.so|mk I'
+'fk'⎕NA'./build/gk.so|fk >I1[] P I'
+'gk'⎕NA'P ./build/gk.so|gk P <I1[] <I1[] <I1[] I I I I'
 
 rp_joinx←{
 	⍝ Join relations ⍺ and ⍵ into a single relation
