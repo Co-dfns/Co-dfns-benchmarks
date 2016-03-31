@@ -1,5 +1,5 @@
-Build/*.so
-Build/*.c
-Build/*.log
+build/*.so
+build/*.c
+build/*.log
 dwa/
 aplcore
