@@ -1,10 +1,10 @@
 :Namespace genokey
 
-⎕SE.SALT.Load './GenoKey/genokey_cd -target=#'
-⎕SE.SALT.Load './GenoKey/genokey_dy -target=#'
-⎕SE.SALT.Load './GenoKey/genokey_acc -target=#'
-⎕SE.SALT.Load './GenoKey/genokey_RP0 -target=#'
-⎕SE.SALT.Load './GenoKey/genokey_RP1 -target=#'
+⎕SE.SALT.Load './genokey/genokey_cd -target=#'
+⎕SE.SALT.Load './genokey/genokey_dy -target=#'
+⎕SE.SALT.Load './genokey/genokey_acc -target=#'
+⎕SE.SALT.Load './genokey/genokey_RP0 -target=#'
+⎕SE.SALT.Load './genokey/genokey_RP1 -target=#'
 
 RPCD←#.genokey_cd.rp_joinx
 RPDY←#.genokey_dy.rp_joinx
