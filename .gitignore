@@ -1,6 +1,6 @@
 build/*.so
 build/*.c
 build/*.log
-build/*.o
+*.o
 dwa/
 aplcore
