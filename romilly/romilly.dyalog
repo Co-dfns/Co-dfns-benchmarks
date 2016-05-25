@@ -5,22 +5,27 @@ S←':Namespace' 'Run←{÷1+*-⍺+.×⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'romilly' #.codfns.Fix S
-'accrun'⎕NA'./romilly/romilly.so|romilly P P P U8 U8'
-'accmak'⎕NA'P ./romilly/romilly.so|makedata <F8[] U8'
-'accfre'⎕NA'./romilly/romilly.so|freedata P U8'
+SOP←#.codfns.BSO'romilly'
+'cdrun'⎕NA SOP,'|Runff P P P'
+mka←'romilly'∘#.codfns.MKA
+frea←'romilly'∘#.codfns.FREA
 
-∇Run X;mat;vec;CDR;DYR
+∇Run X;mat;vec;CDR;DYR;_
+⎕←X
 mat←0.01×?X X⍴100
 vec←0.01×?X⍴100
-matp←accmak (,mat) (X×X)
-vecp←accmak vec X
-resp←accmak (X⍴0) X
-⎕←#.timing.cmpx '#.romilly.(accrun resp matp vecp X X)' '#.romilly.(vec CD.Run mat)'
-_←accfre matp (X×X) ⋄ accfre vecp X ⋄ accfre resp X
+matp←mka mat
+vecp←mka vec
+resp←mka ⍬
+kern←'#.romilly.(cdrun resp matp vecp)'
+cdfn←'#.romilly.(mat CD.Run vec)'
+dylg←'#.romilly.(mat DY.Run vec)'
+⎕←#.timing.cmpx kern dylg
+frea vecp ⋄ frea matp ⋄ frea resp
 ∇
 
-∇Benchmark
-Run¨10*1+⍳4
+∇Benchmark;_
+Run¨2*5+⍳9
 ∇
 
 :EndNamespace
