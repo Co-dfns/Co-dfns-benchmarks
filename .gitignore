@@ -1,4 +1,4 @@
-build/*.so
+*.so
 build/*.c
 build/*.log
 *.o

@@ -17,7 +17,7 @@ void freedata(double *dat,size_t count){
   #pragma acc exit data delete(dat[:count])
 }
 
-void romilly(double*res,double*mat,double*vec,size_t rows,size_t cols){
+void ann(double*res,double*mat,double*vec,size_t rows,size_t cols){
   size_t total=rows*cols;
   #pragma acc kernels present(vec[:cols],mat[:total],res[:rows])
 {
