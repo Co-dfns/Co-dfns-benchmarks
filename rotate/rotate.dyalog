@@ -1,17 +1,17 @@
-﻿:Namespace rotfirst
+﻿:Namespace rotate
   ⎕IO←0
 
 S←⊂':Namespace'
-S,←⊂'Run←{⍺⊖⍵}'
+S,←⊂'Run←{⍺⌽⍵}'
 S,←⊂':EndNamespace'
 
 DY←⎕FIX S
-CD←'rotfirst' #.codfns.Fix S
-SOP←#.codfns.BSO'rotfirst'
+CD←'rotate' #.codfns.Fix S
+SOP←#.codfns.BSO'rotate'
 'cdRunbi'⎕NA SOP,'|Runbi P P P'
 'cdRunii'⎕NA SOP,'|Runii P P P'
-mka←'rotfirst'∘#.codfns.MKA
-frea←'rotfirst'∘#.codfns.FREA
+mka←'rotate'∘#.codfns.MKA
+frea←'rotate'∘#.codfns.FREA
 
 ∇Z←Runb(X Y);rotp;inpt;inptp;resp;kern;dylg;_
 ⎕←'Bitvector' X Y
@@ -19,8 +19,8 @@ rotp←mka Y
 inpt←?X X⍴2
 inptp←mka inpt
 resp←mka ⍬
-kern←'#.rotfirst.(cdRunbi resp rotp inptp)'
-dylg←'#.rotfirst.(Y DY.Run inpt)'
+kern←'#.rotate.(cdRunbi resp rotp inptp)'
+dylg←'#.rotate.(Y DY.Run inpt)'
 ⎕←#.timing.cmpx kern dylg
 _←frea rotp ⋄ _←frea inptp ⋄ _←frea resp
 Z←0 0⍴⍬
@@ -32,8 +32,8 @@ rotp←mka Y
 inpt←?X X⍴2*28
 inptp←mka inpt
 resp←mka ⍬
-kern←'#.rotfirst.(cdRunii resp rotp inptp)'
-dylg←'#.rotfirst.(Y DY.Run inpt)'
+kern←'#.rotate.(cdRunii resp rotp inptp)'
+dylg←'#.rotate.(Y DY.Run inpt)'
 ⎕←#.timing.cmpx kern dylg
 _←frea rotp ⋄ _←frea inptp ⋄ _←frea resp
 Z←0 0⍴⍬
