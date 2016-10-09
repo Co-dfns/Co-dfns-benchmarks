@@ -1,4 +1,4 @@
-:Namespace genokey_acc
+﻿:Namespace genokey_acc
 
 'mk'⎕NA'P ./build/gk.so|mk I'
 'fk'⎕NA'./build/gk.so|fk >I1[] P I'

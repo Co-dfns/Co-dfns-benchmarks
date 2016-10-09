@@ -1,4 +1,4 @@
-:Namespace genokey
+﻿:Namespace genokey
 
 ⎕SE.SALT.Load './genokey/genokey_cd -target=#'
 ⎕SE.SALT.Load './genokey/genokey_dy -target=#'
