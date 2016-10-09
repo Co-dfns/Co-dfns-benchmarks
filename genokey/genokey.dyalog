@@ -2,7 +2,7 @@
 
 ⎕SE.SALT.Load './genokey/genokey_cd -target=#'
 ⎕SE.SALT.Load './genokey/genokey_dy -target=#'
-⎕SE.SALT.Load './genokey/genokey_acc -target=#'
+⍝ ⎕SE.SALT.Load './genokey/genokey_acc -target=#'
 ⎕SE.SALT.Load './genokey/genokey_RP0 -target=#'
 ⎕SE.SALT.Load './genokey/genokey_RP1 -target=#'
 
