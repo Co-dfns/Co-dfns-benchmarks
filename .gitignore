@@ -4,3 +4,13 @@ build/*.log
 *.o
 dwa/
 aplcore
+build/*.dll
+build/*.dwf
+build/*.exp
+build/*.lib
+build/*.obj
+build/*.pdb
+*.dll
+*.exp
+*.lib
+*.pdb
