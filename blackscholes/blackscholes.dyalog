@@ -19,7 +19,7 @@ CD←'blackscholes' #.codfns.Fix S
 
 Conv←{{(,¯1↑⍵)(⊃((⎕DR 2↑⍵)323)⎕DR 2↑⍵)}⍉GD ⍵}
 Call←{'#.blackscholes.{⊃',⍺,'.Run/Conv ⍵} ',⍵}
-Run←{⎕←#.timing.cmpx ('CD' Call ⍵)('DY' Call ⍵)⊣⎕←''}
+Run←{⎕←#.cmpx ('CD' Call ⍵)('DY' Call ⍵)⊣⎕←''}
 
 ∇Benchmark
 Run∘⍕¨2*10+2×⍳8
