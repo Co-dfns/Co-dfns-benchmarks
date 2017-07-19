@@ -1,4 +1,4 @@
-:Namespace scan
+﻿:Namespace scan
 
 S←':Namespace' 'Run←{+\⍵}' ':EndNamespace'
 
