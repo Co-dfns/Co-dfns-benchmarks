@@ -1,4 +1,4 @@
-﻿:Namespace ann
+:Namespace ann
   ⎕IO←0
 
 S←':Namespace' 'Run←{÷1+*-⍺+.×⍵}' ':EndNamespace'
