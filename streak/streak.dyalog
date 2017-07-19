@@ -1,27 +1,28 @@
 ﻿:Namespace streak
 
-S←':Namespace' 'Run←{is←¯1↓⍵<1⌽⍵ ⋄ s←+\is ⋄ ⌈/0,s-⌈\s-s×is}' ':EndNamespace'
+S←':Namespace' 'Run←{R←?⍵⍴2*29 ⋄ s←+\is←¯1↓R<1⌽R ⋄ ⌈/0,s-⌈\s-s×is}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'streak' #.codfns.Fix S
 SOP←#.codfns.BSO'streak'
-'cdrun'⎕NA SOP,'|Runin P P P'
+'cdrun'⎕NA SOP,'|Run_cdf P P P'
 mka←'streak'∘#.codfns.MKA
 frea←{}'streak'∘#.codfns.FREA
 
-∇Run RC;L;LP;R;RP;ZP;kern;dylg
+∇Run RC;L;LP;R;RP;ZP;kern;dylg;cdfn;_
 ⎕←RC
-R←?RC⍴2*19
-RP←mka R
-ZP←mka ⍬
-kern←'#.streak.(cdrun ZP 0 RP)'
-dylg←'#.streak.(DY.Run R)'
-⎕←#.cmpx kern dylg
-frea LP ⋄ frea RP ⋄ frea ZP
+⍝ R←?RC⍴2*29
+⍝ RP←mka R
+⍝ ZP←mka ⍬
+⍝ kern←'#.streak.(cdrun ZP 0 RP)'
+cdfn←'#.streak.(CD.Run RC)'
+dylg←'#.streak.(DY.Run RC)'
+⎕←#.cmpx cdfn dylg
+⍝ frea LP ⋄ frea RP ⋄ frea ZP
 ∇
 
 ∇Benchmark;_
-∘.Run⍨2*10+⍳10
+Run¨256,2*13+⍳10
 ∇
 
 :EndNamespace
