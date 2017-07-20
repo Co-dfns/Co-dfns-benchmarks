@@ -1,7 +1,7 @@
 ﻿:Namespace ann
   ⎕IO←0
 
-S←':Namespace' 'Run←{÷1+*-⍺+.×⍵}' ':EndNamespace'
+S←':Namespace' 'Run←{⍺({÷1+*-⍺+.×⍵}⍣1000)⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'ann' #.codfns.Fix S
@@ -26,7 +26,7 @@ dylg←'#.ann.(mat DY.Run vec)'
 ∇
 
 ∇Benchmark;_
-Run¨10,2*5+⍳12
+Run¨10,2*5+⍳9
 ∇
 
 :EndNamespace
