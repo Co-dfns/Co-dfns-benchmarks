@@ -24,6 +24,7 @@ Call←{'#.blackscholes.{⊃',⍺,'.Run/Conv ⍵} ',⍵}
  D←⍉GD X ⋄ L←,¯1↑D ⋄ R←⊃((⎕DR 2↑D)323)⎕DR 2↑D
  ⎕←X
  ⎕←#.cmpx '#.blackscholes.(L CD.Run R)' '#.blackscholes.(L DY.Run R)'
+ _←⎕EX¨'D' 'R' 'L'
 ∇
 
 ∇Benchmark
