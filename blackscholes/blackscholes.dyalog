@@ -28,7 +28,7 @@ Call←{'#.blackscholes.{⊃',⍺,'.Run/Conv ⍵} ',⍵}
 ∇
 
 ∇Benchmark
- Run¨256,2*10+2×⍳8
+ Run¨256,2*10+2×⍳5
 ∇
 
 :EndNamespace

@@ -6,7 +6,8 @@ S←':Namespace' 'Run←{⍺+.×⍵}' ':EndNamespace'
 DY←⎕FIX S
 CD←'innerproduct' #.codfns.Fix S
 SOP←#.codfns.BSO'innerproduct'
-'cdrun'⎕NA SOP,'|Runff P P P'
+'cdrun'⎕NA SOP,'|Run_cdf P P P'
+'sync'⎕NA SOP,'|afsync'
 mka←'innerproduct'∘#.codfns.MKA
 frea←{}'innerproduct'∘#.codfns.FREA
 
@@ -17,10 +18,10 @@ RA←0.01×?RS⍴100
 LAP←mka LA
 RAP←mka RA
 RESP←mka ⍬
-kern←'#.innerproduct.(cdrun RESP LAP RAP)'
+kern←'#.innerproduct.{cdrun RESP LAP RAP ⋄ sync}⍬'
 cdfn←'#.innerproduct.(LA CD.Run RA)'
 dylg←'#.innerproduct.(LA DY.Run RA)'
-⎕←#.timing.cmpx kern dylg
+⎕←#.cmpx kern dylg
 frea RAP ⋄ frea LAP ⋄ frea RESP
 ∇
 

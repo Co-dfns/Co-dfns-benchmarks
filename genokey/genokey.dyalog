@@ -13,8 +13,8 @@ RPDY←#.genokey_dy.rp_joinx
 Call←{'#.genokey.{⊃',⍺,'/⍵}',⍵}
 
 ∇Benchmark
-⎕←#.timing.cmpx 1↓('RPAC'Call'#.RP1')('RPCD'Call'#.RP1')('RPDY'Call'#.RP1')⊣⎕←''
-⎕←#.timing.cmpx 1↓('RPAC'Call'#.RP0')('RPCD'Call'#.RP0')('RPDY'Call'#.RP0')⊣⎕←''
+⎕←#.cmpx 1↓('RPAC'Call'#.RP1')('RPCD'Call'#.RP1')('RPDY'Call'#.RP1')⊣⎕←''
+⎕←#.cmpx 1↓('RPAC'Call'#.RP0')('RPCD'Call'#.RP0')('RPDY'Call'#.RP0')⊣⎕←''
 ∇
 
 :EndNamespace

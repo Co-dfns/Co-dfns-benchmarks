@@ -1,4 +1,4 @@
-:Namespace romilly
+﻿:Namespace romilly
   ⎕IO←0
 
 S←⊂':Namespace'
@@ -12,7 +12,7 @@ g3inputs←{1=?⍵⍴2}
 DY←⎕FIX S
 CD←'romilly' #.codfns.Fix S
 SOP←#.codfns.BSO'romilly'
-'cdgranule3'⎕NA SOP,'|granule3bb P P P'
+⍝'cdgranule3'⎕NA SOP,'|granule3bb P P P'
 mka←'romilly'∘#.codfns.MKA
 frea←'romilly'∘#.codfns.FREA
 
@@ -20,14 +20,14 @@ frea←'romilly'∘#.codfns.FREA
 ⎕←X
 conn←g3connector X X
 inpt←g3inputs X X
-connp←mka conn
-inptp←mka inpt
-resp←mka ⍬
+⍝connp←mka conn
+⍝inptp←mka inpt
+⍝resp←mka ⍬
 kern←'#.romilly.(cdgranule3 resp connp inptp)'
 cdfn←'#.romilly.(conn CD.granule3 inpt)'
 dylg←'#.romilly.(conn DY.granule3 inpt)'
-⎕←#.timing.cmpx kern dylg
-frea connp ⋄ frea inptp ⋄ frea resp
+⎕←#.cmpx cdfn dylg
+⍝frea connp ⋄ frea inptp ⋄ frea resp
 ∇
 
 ∇Benchmark
