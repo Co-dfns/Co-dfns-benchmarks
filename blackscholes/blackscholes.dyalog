@@ -16,15 +16,21 @@ D←⍉GD 7 ⋄ R←⊃((⎕DR 2↑D)323)⎕DR 2↑D ⋄ L←,¯1↑D
 
 DY←⎕FIX S
 CD←'blackscholes' #.codfns.Fix S
+SOP←#.codfns.BSO'blackscholes'
+'cdrun'⎕NA SOP,'|Run_cdf P P P'
+'sync'⎕NA SOP,'|afsync'
+mka←'blackscholes'∘#.codfns.MKA
+frea←{}'blackscholes'∘#.codfns.FREA
+kern←'#.blackscholes.{cdrun ZP LP RP ⋄ sync}⍬'
+cdfns←'#.blackscholes.(L CD.Run R)'
+dylg←'#.blackscholes.(L DY.Run R)'
 
-Conv←{{(,¯1↑⍵)(⊃((⎕DR 2↑⍵)323)⎕DR 2↑⍵)}⍉GD ⍵}
-Call←{'#.blackscholes.{⊃',⍺,'.Run/Conv ⍵} ',⍵}
-
-∇Run X
+∇Run X;D;L;R;LP;RP;ZP
  D←⍉GD X ⋄ L←,¯1↑D ⋄ R←⊃((⎕DR 2↑D)323)⎕DR 2↑D
  ⎕←X
- ⎕←#.cmpx '#.blackscholes.(L CD.Run R)' '#.blackscholes.(L DY.Run R)'
- _←⎕EX¨'D' 'R' 'L'
+ RP←mka R ⋄ LP←mka L ⋄ ZP←mka ⍬
+ ⎕←#.cmpx kern cdfns dylg
+ frea RP ⋄ frea LP ⋄ frea ZP
 ∇
 
 ∇Benchmark
