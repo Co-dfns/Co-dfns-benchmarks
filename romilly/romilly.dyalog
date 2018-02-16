@@ -11,8 +11,8 @@ g3inputs←{1=?⍵⍴2}
 
 DY←⎕FIX S
 CD←'romilly' #.codfns.Fix S
-SOP←#.codfns.BSO'romilly'
-⍝'cdgranule3'⎕NA SOP,'|granule3bb P P P'
+SOP←'romilly',#.codfns.soext⍬
+⍝'cdgranule3'⎕NA SOP,'|granule3_cdf P P P'
 mka←'romilly'∘#.codfns.MKA
 frea←'romilly'∘#.codfns.FREA
 

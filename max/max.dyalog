@@ -7,9 +7,9 @@ S,←⊂':EndNamespace'
 
 DY←⎕FIX S
 CD←'max' #.codfns.Fix S
-SOP←#.codfns.BSO'max'
-'cdRunbn'⎕NA SOP,'|Runbn P P P'
-'cdRunin'⎕NA SOP,'|Runin P P P'
+SOP←'max',#.codfns.soext⍬
+'cdRunbn'⎕NA SOP,'|Run_cdf P P P'
+'cdRunin'⎕NA SOP,'|Run_cdf P P P'
 mka←'max'∘#.codfns.MKA
 frea←'max'∘#.codfns.FREA
 

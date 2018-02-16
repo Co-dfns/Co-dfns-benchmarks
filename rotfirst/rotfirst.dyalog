@@ -7,9 +7,9 @@ S,←⊂':EndNamespace'
 
 DY←⎕FIX S
 CD←'rotfirst' #.codfns.Fix S
-SOP←#.codfns.BSO'rotfirst'
-'cdRunbi'⎕NA SOP,'|Runbi P P P'
-'cdRunii'⎕NA SOP,'|Runii P P P'
+SOP←'rotfirst',#.codfns.soext⍬
+'cdRunbi'⎕NA SOP,'|Run_cdf P P P'
+'cdRunii'⎕NA SOP,'|Run_cdf P P P'
 mka←'rotfirst'∘#.codfns.MKA
 frea←'rotfirst'∘#.codfns.FREA
 

@@ -11,7 +11,7 @@ S2,←⊂':EndNamespace'
 
 DY←⎕FIX S1
 CD←'gol' #.codfns.Fix S2
-SOP←#.codfns.BSO'gol'
+SOP←'gol',#.codfns.soext⍬
 'cdlife'⎕NA SOP,'|life_cdf P P P'
 'sync'⎕NA SOP,'|afsync'
 mka←'gol'∘#.codfns.MKA

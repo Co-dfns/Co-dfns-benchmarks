@@ -4,8 +4,8 @@ S←':Namespace' 'Run←{⍺⍳⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'indexof' #.codfns.Fix S
-SOP←#.codfns.BSO'indexof'
-'cdrun'⎕NA SOP,'|Runii P P P'
+SOP←'indexof',#.codfns.soext⍬
+'cdrun'⎕NA SOP,'|Run_cdf P P P'
 mka←'indexof'∘#.codfns.MKA
 frea←{}'indexof'∘#.codfns.FREA
 

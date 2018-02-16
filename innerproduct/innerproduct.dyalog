@@ -5,7 +5,7 @@ S←':Namespace' 'Run←{⍺+.×⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'innerproduct' #.codfns.Fix S
-SOP←#.codfns.BSO'innerproduct'
+SOP←'innerproduct',#.codfns.soext⍬
 'cdrun'⎕NA SOP,'|Run_cdf P P P'
 'sync'⎕NA SOP,'|afsync'
 mka←'innerproduct'∘#.codfns.MKA

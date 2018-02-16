@@ -5,7 +5,7 @@ S←':Namespace' 'Run←{⎕FFT ⍵}' ':EndNamespace'
 
 FFTW3←⎕SE.SALT.Load './fft/FFTW3'
 CD←'fft' #.codfns.Fix S
-SOP←#.codfns.BSO'fft'
+SOP←'fft',#.codfns.soext⍬
 'cdrun'⎕NA SOP,'|Run_cdf P P P'
 'sync'⎕NA SOP,'|afsync'
 mka←'fft'∘#.codfns.MKA

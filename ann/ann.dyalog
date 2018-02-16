@@ -5,9 +5,9 @@ S←':Namespace' 'Run←{÷1+*-⍺+.×⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'ann' #.codfns.Fix S
-SOP←#.codfns.BSO'ann'
-'cdrun'⎕NA SOP,'|Run_cdf P P P'
-'sync'⎕NA SOP,'|afsync'
+ext←#.codfns.soext⍬
+'cdrun'⎕NA 'ann',ext,'|Run_cdf P P P'
+'sync'⎕NA 'ann',ext,'|afsync'
 mka←'ann'∘#.codfns.MKA
 frea←'ann'∘#.codfns.FREA
 get←'ann'∘#.codfns.EXA

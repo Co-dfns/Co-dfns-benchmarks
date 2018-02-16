@@ -4,7 +4,7 @@ S←':Namespace' 'Run←{¯32↑+\⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'scan' #.codfns.Fix S
-SOP←#.codfns.BSO'scan'
+SOP←'scan',#.codfns.soext⍬
 'cdrun'⎕NA SOP,'|Run_cdf P P P'
 mka←'scan'∘#.codfns.MKA
 frea←{}'scan'∘#.codfns.FREA

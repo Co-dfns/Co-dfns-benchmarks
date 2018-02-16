@@ -1,4 +1,4 @@
-:Namespace genokey_cd
+﻿:Namespace genokey_cd
 
 I←{⍬≡⍴⍵:⍵ ⋄ ⊃((⎕DR ⍵)323)⎕DR ⍵}
 S←⊂':Namespace' 
@@ -8,7 +8,7 @@ S,←⊂'⍺∧0≠I J⌷S⍴VAL}'
 S,←⊂':EndNamespace'
 
 CD←'genokey'#.codfns.Fix S
-so←#.codfns.BSO 'genokey'
+so←'genokey',#.codfns.soext⍬
 
 rp_joinx←{
 	_←'Doib'⎕NA so,'|Doib P P P'

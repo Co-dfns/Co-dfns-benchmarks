@@ -4,7 +4,7 @@ S←':Namespace' 'Run←{R←?⍵⍴2*29 ⋄ s←+\is←¯1↓R<1⌽R ⋄ ⌈/0,
 
 DY←⎕FIX S
 CD←'streak' #.codfns.Fix S
-SOP←#.codfns.BSO'streak'
+SOP←'streak',#.codfns.soext⍬
 'cdrun'⎕NA SOP,'|Run_cdf P P P'
 mka←'streak'∘#.codfns.MKA
 frea←{}'streak'∘#.codfns.FREA

@@ -4,9 +4,9 @@ S←':Namespace' 'Run←{((13≠⍵)∨(10≠1⌽⍵))/⍵}' ':EndNamespace'
 
 DY←⎕FIX S
 CD←'crlf2lf' #.codfns.Fix S
-SOP←#.codfns.BSO'crlf2lf'
-'cdrun'⎕NA SOP,'|Run_cdf P P P'
-'sync'⎕NA SOP,'|afsync'
+ext←#.codfns.soext⍬
+'cdrun'⎕NA 'crlf2lf',ext,'|Run_cdf P P P'
+'sync'⎕NA 'crlf2lf',ext,'|afsync'
 mka←'crlf2lf'∘#.codfns.MKA
 frea←{}'crlf2lf'∘#.codfns.FREA
 kern←'#.crlf2lf.{cdrun ZP 0 DP ⋄ sync}⍬'
